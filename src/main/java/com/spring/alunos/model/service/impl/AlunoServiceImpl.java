@@ -22,7 +22,7 @@ public class AlunoServiceImpl implements AlunoService{
 
     @Override
     public Aluno getAlunoById(Long id) {
-        return ar.getById(id);
+        return ar.findById(id).get();
     }
 
     @Override

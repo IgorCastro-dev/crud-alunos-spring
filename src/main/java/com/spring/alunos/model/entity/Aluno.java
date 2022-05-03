@@ -14,7 +14,10 @@ public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+      
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "first_name")
     @NotBlank
     private String firstName;
@@ -23,9 +26,13 @@ public class Aluno {
     @NotBlank
     private String lastName;
 
-    @Column(name = "email")
-    private String email;
+    public Aluno(){}
 
+    public Aluno(@NotBlank String firstName, @NotBlank String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
     public Long getId() {
         return id;
     }
