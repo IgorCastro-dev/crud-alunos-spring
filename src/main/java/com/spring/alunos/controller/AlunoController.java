@@ -62,7 +62,7 @@ public class AlunoController {
             alunoexistente.setEmail(aluno.getEmail());
             as.saveAluno(alunoexistente);
         return "redirect:/alunos";
-        }
+        } 
     }
 
     @GetMapping("/aluno/delete/{id}")
