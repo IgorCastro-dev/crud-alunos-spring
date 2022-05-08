@@ -31,9 +31,8 @@ public class AlunoServiceImpl implements AlunoService{
     }
 
     @Override
-    public Aluno updateAluno() {
-        // TODO Auto-generated method stub
-        return null;
+    public Aluno updateAluno(Aluno aluno) {
+        return ar.save(aluno);
     }
 
     @Override

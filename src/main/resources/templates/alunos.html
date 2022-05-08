@@ -33,7 +33,11 @@
                 <tr>
                     <td th:text="${aluno.firstName}"></td>
                     <td th:text="${aluno.lastName}"></td>
-                    <td th:text="${aluno.email}"></td>                   
+                    <td th:text="${aluno.email}"></td>
+                    <td>
+                        <a th:href = "@{/aluno/edit/{id}(id=${aluno.id})}"
+                        class="btn btn-primary">Atualizar</a>
+                    </td>                  
                 </tr>
             </tbody>
         </table>

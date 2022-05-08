@@ -8,6 +8,6 @@ public interface AlunoService {
     List<Aluno> getAllAlunos();
     Aluno getAlunoById(Long id);
     Aluno saveAluno(Aluno aluno);
-    Aluno updateAluno();
+    Aluno updateAluno(Aluno aluno);
     void dropAluno();
 }
