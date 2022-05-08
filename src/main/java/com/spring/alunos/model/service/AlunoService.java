@@ -9,5 +9,5 @@ public interface AlunoService {
     Aluno getAlunoById(Long id);
     Aluno saveAluno(Aluno aluno);
     Aluno updateAluno(Aluno aluno);
-    void dropAluno();
+    void dropAluno(Long id);
 }

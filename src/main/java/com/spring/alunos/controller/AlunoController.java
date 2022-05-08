@@ -59,4 +59,10 @@ public class AlunoController {
         as.saveAluno(alunoexistente);
         return "redirect:/alunos";
     }
+
+    @GetMapping("/aluno/delete/{id}")
+    public String deletealuno(@PathVariable Long id){
+        as.dropAluno(id);
+        return"redirect:/alunos";
+    }
 }

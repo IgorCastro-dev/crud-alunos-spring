@@ -36,9 +36,8 @@ public class AlunoServiceImpl implements AlunoService{
     }
 
     @Override
-    public void dropAluno() {
-        // TODO Auto-generated method stub
-        
+    public void dropAluno(Long id) {
+        ar.deleteById(id);
     }
     
 }
