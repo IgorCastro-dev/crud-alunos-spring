@@ -51,13 +51,18 @@ public class AlunoController {
     }
 
     @PostMapping("/aluno/edit/{id}")
-    public String atualizaaluno(@PathVariable Long id,Aluno aluno){
-        Aluno alunoexistente = as.getAlunoById(id);
-        alunoexistente.setFirstName(aluno.getFirstName());
-        alunoexistente.setLastName(aluno.getLastName());
-        alunoexistente.setEmail(aluno.getEmail());
-        as.saveAluno(alunoexistente);
+    public String atualizaaluno(@PathVariable Long id,@Valid Aluno aluno,BindingResult results, RedirectAttributes attributes){
+        if(results.hasErrors()){
+            attributes.addFlashAttribute("mensagem", "verifique se os campos foram preenchidos");
+            return "redirect:/aluno/novo";
+        }else{
+            Aluno alunoexistente = as.getAlunoById(id);
+            alunoexistente.setFirstName(aluno.getFirstName());
+            alunoexistente.setLastName(aluno.getLastName());
+            alunoexistente.setEmail(aluno.getEmail());
+            as.saveAluno(alunoexistente);
         return "redirect:/alunos";
+        }
     }
 
     @GetMapping("/aluno/delete/{id}")
